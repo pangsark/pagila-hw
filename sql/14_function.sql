@@ -7,7 +7,8 @@ CREATE OR REPLACE FUNCTION list_category(TEXT) RETURNS TABLE(title TEXT) AS
 $$
 SELECT film.title AS list_category
 FROM film
-JOIN film_category USING (category_id)
+JOIN film_category USING (film_id)
+JOIN category USING (category_id)
 WHERE category.name = $1
 ORDER BY film.title;
 $$

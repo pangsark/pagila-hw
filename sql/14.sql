@@ -4,6 +4,7 @@
  */
 SELECT title
 FROM film
+JOIN film_category USING (film_id)
 JOIN category USING (category_id)
 WHERE category.name = 'Family'
 ORDER BY title;

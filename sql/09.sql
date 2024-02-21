@@ -5,6 +5,6 @@
 SELECT first_name, last_name, sum(amount) AS sum
 FROM staff
 JOIN payment USING(staff_id)
-WHERE EXTRACT(year FROM payment_date) = 2020 and EXTRACT(month FROM payment_date) = 1;
-GROUP BY first_name, last_name, staff_id
+WHERE EXTRACT(YEAR FROM payment_date) = 2020 AND EXTRACT(MONTH FROM payment_date) = 1;
+GROUP BY first_name, last_name
 ORDER BY sum;
