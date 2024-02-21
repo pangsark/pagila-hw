@@ -6,6 +6,6 @@
 SELECT title, film_id, count(inventory.inventory_id) AS count
 FROM film
 JOIN inventory USING (film_id)
-WHERE title ILIKE 'H%'
-GROUP BY title, film_id
+WHERE title LIKE 'H%'
+GROUP BY film_id, title
 ORDER BY title DESC;
