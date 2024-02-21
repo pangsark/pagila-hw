@@ -3,17 +3,9 @@
  * Use tables inventory and film.
  * Order by film title alphabetically.
  */
-SELECT
-    title, 
-    film_id,
-    count(inventory.inventory_id) AS count_copy
-FROM
-    inventory
-JOIN
-    film USING (film_id)
-WHERE
-    title LIKE 'H%'
-GROUP BY
-    title, film_id
-ORDER BY
-    title DESC;
+SELECT title, film_id, count(inventory.inventory_id) AS count_copy
+FROM inventory
+JOIN film USING (film_id)
+WHERE title LIKE 'H%'
+GROUP BY title, film_id
+ORDER BY title DESC;

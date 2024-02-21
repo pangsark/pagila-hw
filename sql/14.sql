@@ -2,13 +2,8 @@
  * Use a JOIN to list all films in the "Family" category.
  * Use table category, film_category, and film.
  */
-SELECT 
-    title
-FROM
-    film
-JOIN
-    category USING (category_id)
-WHERE
-    category.name = 'Family'
-ORDER BY
-    title;
+SELECT title
+FROM film
+JOIN category USING (category_id)
+WHERE category.name = 'Family'
+ORDER BY title;
